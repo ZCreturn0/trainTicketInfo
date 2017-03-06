@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style/jquery.mobile-1.4.5.min.css">
+	<title>列车时刻查询</title>
+	<style type="text/css">
+		table thead tr td{
+			font-weight: bold;
+		} 
+	</style>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div data-role="page" id="index">		<!--data-role固定为page，表示一个页面-->
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>车票查询</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<form id="from-to-search">									<!--id唯一-->
+				<div class="ui-field-contain">
+					<label>发车站:</label>
+					<input type="text" name="start">
+				</div>
+				<div class="ui-field-contain">
+					<label>终点站:</label>
+					<input type="text" name="end">
+				</div>
+				<input type="button" value="查询" data-theme="b">
+			</form>
+		</div>																
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#index" data-icon="home" data-transition="slide">车票查询</a></li>
+					<li><a href="#index2" data-icon="search" data-transition="slide">车次查询</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div data-role="page" id="index-result">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>查询结果</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<ul data-role="listview" data-inset="true">
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#index" data-icon="home" data-transition="pop">车票查询</a></li>
+					<li><a href="#index2" data-icon="search" data-transition="pop">车次查询</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div data-role="page" id="train-result">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>车次详情</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<table data-role="table" data-mode="reflow" class="ui-responsive">
+				<thead>
+					<tr>
+						<td>站点</td>
+						<td>到达时间</td>
+						<td>发车时间</td>
+						<td>距发车站距离(km)</td>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#index" data-icon="home" data-transition="pop">车票查询</a></li>
+					<li><a href="#index2" data-icon="search" data-transition="pop">车次查询</a></li>
+					<li><a href="#index-result" data-icon="back" data-transition="pop">返回</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div data-role="page" id="index2">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>车次查询</h1>
+		</div>
+		<div data-role="content" class="ui-content">
+			<form id="from-to-search">
+				<div class="ui-field-contain">
+					<label>车次:</label>
+					<input type="text" name="trainnum">
+				</div>
+				<input type="button" value="查询" data-theme="b">
+			</form>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#index" data-icon="home" data-transition="pop">车票查询</a></li>
+					<li><a href="#index2" data-icon="search" data-transition="pop">车次查询</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
